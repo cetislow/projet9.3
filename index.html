@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en/fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorateur de pays</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header	class="entete">
+<h1>Explorateur	de	pays</h1>
+<div	class="barre-outils">
+<input	type="text"	id="champ-recherche"	placeholder="Rechercher	un	pays...">
+<select	id="select-continent">
+<option	value="tous">Tous	les	continents</option>
+<option	value="Africa">Afrique</option>
+<option	value="Europe">Europe</option>
+<option	value="Asia">Asie</option>
+<option	value="Americas">Amériques</option>
+<option	value="Oceania">Océanie</option>
+</select>
+<select	id="select-tri">
+<option	value="nom">Trier	par	nom</option>
+<option	value="population">Trier	par	population</option>
+</select>
+</div>
+</header>
+filter ,	recherche	par	nom	et	tri	se	font	en	mémoire,	côté	JavaScript,
+<main>
+<p	id="etat-vide"	class="etat-vide"	hidden>Aucun	pays	ne	correspond	à	cette	recherche.</p>
+<section	id="sortie"	class="grille-pays"></section>
+</main>
+<footer	class="pied">
+     <p>Akieni Academy - Cohorte 2 - 2026</p>
+</footer>
+<script src="pays.js"></script>
+</body>
+</html>

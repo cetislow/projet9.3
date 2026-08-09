@@ -1,0 +1,22 @@
+:root	{	--vert:#10b981;	--violet:#7c3aed;	--fond:#f9fafb;	--rayon:12px;	}
+*	{	box-sizing:	border-box;	margin:	0;	padding:	0;	}
+body	{	font-family:	system-ui,	sans-serif;	background:	var(--fond);	color:	#1f2937;	padding:	1rem;	}
+.entete	{	text-align:	center;	margin-bottom:	1.5rem;	}
+.barre-outils	{	display:	flex;	flex-wrap:	wrap;	justify-content:	center;	gap:	.5rem;	margin-top:	1rem;	}
+.barre-outils	input,	.barre-outils	select	{	padding:	.5rem	.75rem;	border:	1px	solid	#d1d5db;	border-radius:	8px; outline: none;	}
+.etat-vide	{	text-align:	center;	color:	#6b7280;	margin:	2rem	0;	}
+.grille-pays	{	display:	grid;	grid-template-columns:	repeat(auto-fill,	minmax(260px,	1fr));	gap:	1rem;	max-width:	1200px;	margin:	0	auto;	}
+.carte-pays	{	background:	white;	border-radius:	var(--rayon);	overflow:	hidden;	box-shadow:	0	1px	3px	rgba(0,0,0,.08);	transition:	transform	.2s,	
+box-shadow	.2s;	}
+.carte-pays:hover	{	transform:	translateY(-3px);	box-shadow:	0	6px	16px	rgba(0,0,0,.12);	}
+.drapeau	{	width:	100%;	height:	130px;	object-fit:	cover;	display:	block;	background:	#e5e7eb;	}
+.contenu-carte	{	padding:	.9rem	1rem;	}
+.contenu-carte	h3	{	margin-bottom:	.3rem;	}
+.contenu-carte	p	{	font-size:	.85rem;	color:	#4b5563;	}
+.squelette	{	background:	linear-gradient(90deg,	#e5e7eb	25%,	#f3f4f6	50%,	#e5e7eb	75%);	background-size:	200%	100%;	animation:	chargement	1.2s	
+infinite;	border-radius:	var(--rayon);	height:	220px;	}
+.pied	{	text-align:	center;	padding:	1rem;	color:	#6b7280;	font-size:	.85rem;	}
+@keyframes	chargement	{	to	{	background-position:	-200%	0;	}	}
+@media	(prefers-reduced-motion:	reduce)	{
+.carte-pays,	.squelette	{	animation:	none;	transition:	none;	}
+}
