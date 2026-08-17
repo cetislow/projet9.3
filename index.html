@@ -1,38 +1,250 @@
 <!DOCTYPE html>
-<html lang="en/fr">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Explorateur de pays</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header	class="entete">
-<h1>Explorateur	de	pays</h1>
-<div	class="barre-outils">
-<input	type="text"	id="champ-recherche"	placeholder="Rechercher	un	pays...">
-<select	id="select-continent">
-<option	value="tous">Tous	les	continents</option>
-<option	value="Africa">Afrique</option>
-<option	value="Europe">Europe</option>
-<option	value="Asia">Asie</option>
-<option	value="Americas">Amériques</option>
-<option	value="Oceania">Océanie</option>
-</select>
-<select	id="select-tri">
-<option	value="nom">Trier	par	nom</option>
-<option	value="population">Trier	par	population</option>
-</select>
-</div>
-</header>
-filter ,	recherche	par	nom	et	tri	se	font	en	mémoire,	côté	JavaScript,
-<main>
-<p	id="etat-vide"	class="etat-vide"	hidden>Aucun	pays	ne	correspond	à	cette	recherche.</p>
-<section	id="sortie"	class="grille-pays"></section>
-</main>
-<footer	class="pied">
-     <p>Akieni Academy - Cohorte 2 - 2026</p>
-</footer>
-<script src="pays.js"></script>
+
+    <!-- =========================
+         EN-TÊTE
+    ========================== -->
+
+    <header class="entete">
+
+        <div class="conteneur">
+
+            <p class="sur-titre">
+                EXPLORATEUR
+            </p>
+
+            <h1>Explorateur de pays</h1>
+
+            <p class="description">
+                Recherchez et découvrez les pays du monde.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="conteneur">
+
+        <!-- =========================
+             BARRE D'OUTILS
+        ========================== -->
+
+        <section class="outils">
+
+            <!-- Recherche -->
+
+            <div class="champ">
+
+                <label for="recherche">
+                    Rechercher un pays
+                </label>
+
+                <input
+                    type="search"
+                    id="recherche"
+                    placeholder="Ex : Congo, France, Japon..."
+                >
+
+            </div>
+
+
+            <!-- Continent -->
+
+            <div class="champ">
+
+                <label for="continent">
+                    Continent
+                </label>
+
+                <select id="continent">
+
+                    <option value="tous">
+                        Tous les continents
+                    </option>
+
+                    <option value="Africa">
+                        Afrique
+                    </option>
+
+                    <option value="Americas">
+                        Amériques
+                    </option>
+
+                    <option value="Asia">
+                        Asie
+                    </option>
+
+                    <option value="Europe">
+                        Europe
+                    </option>
+
+                    <option value="Oceania">
+                        Océanie
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Tri -->
+
+            <div class="champ">
+
+                <label for="tri">
+                    Trier par population
+                </label>
+
+                <select id="tri">
+
+                    <option value="aucun">
+                        Aucun tri
+                    </option>
+
+                    <option value="croissant">
+                        Population croissante
+                    </option>
+
+                    <option value="decroissant">
+                        Population décroissante
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INFORMATIONS
+        ========================== -->
+
+        <section class="informations">
+
+            <p id="nombre-pays">
+                Chargement des pays...
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             CHARGEMENT
+        ========================== -->
+
+        <section
+            id="chargement"
+            class="chargement"
+            aria-label="Chargement"
+        >
+
+            <div class="squelettes">
+
+                <div class="squelette"></div>
+                <div class="squelette"></div>
+                <div class="squelette"></div>
+                <div class="squelette"></div>
+                <div class="squelette"></div>
+                <div class="squelette"></div>
+
+            </div>
+
+            <p>
+                Chargement des pays...
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             GRILLE DES PAYS
+        ========================== -->
+
+        <section
+            id="pays"
+            class="grille-pays"
+            aria-label="Liste des pays"
+        >
+
+            <!-- Les cartes seront générées par JavaScript -->
+
+        </section>
+
+
+        <!-- =========================
+             ÉTAT VIDE
+        ========================== -->
+
+        <section
+            id="etat-vide"
+            class="etat-vide"
+            hidden
+        >
+
+            
+            <h2>
+                Aucun pays trouvé
+            </h2>
+
+            <p>
+                Aucun pays ne correspond à votre recherche.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             ERREUR
+        ========================== -->
+
+        <section
+            id="erreur"
+            class="erreur"
+            hidden
+        >
+
+            <h2>
+                Une erreur est survenue
+            </h2>
+
+            <p>
+                Impossible de récupérer les données des pays.
+                Vérifiez votre connexion Internet puis réessayez.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            Données fournies par REST Countries API
+        </p>
+
+    </footer>
+
+
+    <script src="pays.js"></script>
+
 </body>
+
 </html>
